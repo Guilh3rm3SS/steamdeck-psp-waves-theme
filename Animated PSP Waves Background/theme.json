@@ -1,8 +1,8 @@
 {
   "name": "Animated PSP Waves Background",
-  "version": "v1.0",
+  "version": "v1.1",
   "author": "GuiSS",
-  "description": "PSP inspired theme for Steam Deck using CSS+SVG",
+  "description": "PSP-inspired theme for Steam Deck using CSS + SVG. I recommend using No Hero Gradient to make the colors pop even more.",
   "manifest_version": 8,
   "tabs": {
     "default": [
