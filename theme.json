@@ -1,0 +1,168 @@
+{
+  "name": "Animated PSP Waves Background",
+  "version": "v1.0",
+  "author": "GuiSS",
+  "description": "PSP inspired theme for Steam Deck using CSS+SVG",
+  "manifest_version": 8,
+  "tabs": {
+    "default": [
+      "bigpicture"
+    ]
+  },
+  "inject": {
+    "index.css": []
+  },
+  "patches": {
+    "Theme Color": {
+      "type": "dropdown",
+      "default": "Heavenly Blue",
+      "options": [
+        "Heavenly Violet",
+        "Heavenly Blue",
+        "Original Blue",
+        "Fire Red"
+      ],
+      "values": {
+        "Heavenly Violet": {
+          "color/heavenly_violet.css": []
+        },
+        "Original Blue": {
+          "color/original_blue.css": []
+        },
+        "Fire Red": {
+          "color/fire_red.css": []
+        },
+        "Heavenly Blue": {
+          "color/heavenly_blue.css": []
+        }
+      }
+    },
+    "Wave Height": {
+      "type": "slider",
+      "default": "6",
+      "min": 1,
+      "max": 11,
+      "step": 1,
+      "values": {
+        "1": {
+          "height/1.css": []
+        },
+        "2": {
+          "height/2.css": []
+        },
+        "3": {
+          "height/3.css": []
+        },
+        "4": {
+          "height/4.css": []
+        },
+        "5": {
+          "height/5.css": []
+        },
+        "6": {
+          "height/6.css": []
+        },
+        "7": {
+          "height/7.css": []
+        },
+        "8": {
+          "height/8.css": []
+        },
+        "9": {
+          "height/9.css": []
+        },
+        "10": {
+          "height/10.css": []
+        },
+        "11": {
+          "height/11.css": []
+        }
+      }
+    },
+    "Wave Width": {
+      "type": "slider",
+      "default": "6",
+      "min": 1,
+      "max": 11,
+      "step": 1,
+      "values": {
+        "1": {
+          "width/1.css": []
+        },
+        "2": {
+          "width/2.css": []
+        },
+        "3": {
+          "width/3.css": []
+        },
+        "4": {
+          "width/4.css": []
+        },
+        "5": {
+          "width/5.css": []
+        },
+        "6": {
+          "width/6.css": []
+        },
+        "7": {
+          "width/7.css": []
+        },
+        "8": {
+          "width/8.css": []
+        },
+        "9": {
+          "width/9.css": []
+        },
+        "10": {
+          "width/10.css": []
+        },
+        "11": {
+          "width/11.css": []
+        }
+      }
+    },
+    "Animation Speed": {
+      "type": "slider",
+      "default": "6",
+      "min": 1,
+      "max": 11,
+      "step": 1,
+      "values": {
+        "1": {
+          "speed/1.css": []
+        },
+        "2": {
+          "speed/2.css": []
+        },
+        "3": {
+          "speed/3.css": []
+        },
+        "4": {
+          "speed/4.css": []
+        },
+        "5": {
+          "speed/5.css": []
+        },
+        "6": {
+          "speed/6.css": []
+        },
+        "7": {
+          "speed/7.css": []
+        },
+        "8": {
+          "speed/8.css": []
+        },
+        "9": {
+          "speed/9.css": []
+        },
+        "10": {
+          "speed/10.css": []
+        },
+        "11": {
+          "speed/11.css": []
+        }
+      }
+    }
+  },
+  "id": "guiss-psp-waves-theme"
+}
