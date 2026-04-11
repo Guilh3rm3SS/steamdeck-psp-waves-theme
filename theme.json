@@ -10,7 +10,7 @@
     ]
   },
   "inject": {
-    "index.css": []
+    "theme.css": []
   },
   "patches": {
     "Theme Color": {
