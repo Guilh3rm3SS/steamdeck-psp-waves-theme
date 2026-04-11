@@ -2,6 +2,14 @@
 
 A dynamic animated background theme for the Steam Deck inspired by the classic PSP (PlayStation Portable) XMB menu background themes.
 
+## Previews
+
+<div align="center">
+  <img src="preview_images/original_blue.jpg" width="45%" alt="Original Blue">
+  <img src="preview_images/fire_red.jpg" width="45%" alt="Fire Red">
+  <img src="preview_images/heavenly_violet.jpg" width="45%" alt="Heavenly Violet">
+</div>
+
 ## Technologies Used
 
 *   **CSS:** Used as the main styling language for the background colors, layers, and animations.
