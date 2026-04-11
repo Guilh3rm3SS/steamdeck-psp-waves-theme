@@ -1,6 +1,6 @@
 # Animated PSP Waves Background
 
-A dynamic animated background theme for the Steam Deck inspired by the classic PSP (PlayStation Portable) XMB menu background themes.
+A dynamic animated background theme for the Steam Deck inspired by the classic PSP (PlayStation Portable) XMB menu background themes. As this is my first CSS Project, this theme have a significant impact on Steam Deck GPU and battery usage.
 
 ## Previews
 
@@ -20,7 +20,12 @@ A dynamic animated background theme for the Steam Deck inspired by the classic P
 *   **More Color Palettes** 
 *   **Classic PSP Theme** 
 *   **More "Random" Waves**
-*   **Decrease Steam Deck performance impact** 
+*   **Decrease Steam Deck performance impact**
+
+## Recommended CSS Themes to Use With
+*   **No Hero Gradient** 
+*   **Mini Carousel** 
+*   **Fullscreen Home or Switch Like Home**
 
 ## Installation
 
