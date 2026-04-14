@@ -23,7 +23,7 @@ This project is not affiliated with or endorsed by Sony.
 
 *   **More Color Palettes** 
 *   **Classic PSP Theme** 
-*   **More "Random" Waves**
+*   ~~**More natural wave movements**~~
 *   ~~**Decrease Steam Deck performance impact**~~
 
 ## Recommended CSS Themes to Use With
@@ -37,5 +37,6 @@ This theme is designed to be used with **CSS Loader** on the Steam Deck.
 
 1. Install **Decky Loader** on your Steam Deck.
 2. Open the Decky plugin menu and install the **CSS Loader** plugin.
-3. Place this theme folder into your CSS Loader themes directory (usually located at `~/homebrew/themes/`).
-4. Open the CSS Loader menu on your Steam Deck and enable **Animated PSP Waves Background**.
+3. Download the latest release zip file.
+4. Extract the file and put the theme folder into your CSS Loader themes directory (usually located at `~/homebrew/themes/`).
+5. Open the CSS Loader menu on your Steam Deck and enable **Animated PSP Waves Background**.
