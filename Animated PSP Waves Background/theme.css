@@ -40,30 +40,28 @@
     /* only for smooth travel space */
     height: var(--wave-height);
 
-    background-repeat: repeat-x;
+    background-repeat: no-repeat;
     will-change: transform;
-
+    transform: translateZ(0);
     mix-blend-mode: screen;
     pointer-events: none;
+    background-size: 100% 100%;
+    background-image: var(--wave-1);
+    /* contain: strict;
+    isolation: isolate; */
+    opacity: 1;
 }
 
 /* --- Wave 1 --- */
 .gamepadhomerecentgames_RecentGamesBackgroundContainer_QNkOt::before {
-    background-image: var(--wave-1);
-    background-size: 100% 100%;
-    opacity: 1;
     width: var(--wave-width);
-
     animation: move-wave-1 var(--wave-speed) linear reverse infinite;
 }
 
 /* --- Wave 2 --- */
 .gamepadhomerecentgames_RecentGamesBackgroundContainer_QNkOt::after {
-    background-image: var(--wave-2);
-    background-size: 100% 100%;
-    opacity: 1;
+    /* background-image: var(--wave-1); */
     width: calc(var(--wave-width) * 0.9);
-
     animation: move-wave-2 var(--wave-speed) linear reverse infinite;
 }
 
@@ -74,19 +72,19 @@
     }
 
     25% {
-        transform: translateX(-12.5%) translateY(4%);
+        transform: translateX(-21.7391%) translateY(4%);
     }
 
     50% {
-        transform: translateX(-25%) translateY(2%);
+        transform: translateX(-43.4782%) translateY(2%);
     }
 
     75% {
-        transform: translateX(-37.5%) translateY(0%);
+        transform: translateX(-65.2173%) translateY(0%);
     }
 
     100% {
-        transform: translateX(-50%) translateY(2%);
+        transform: translateX(-86.9564%) translateY(2%);
     }
 }
 
@@ -97,6 +95,14 @@
     }
 
     to {
-        transform: translateX(-50%);
+        transform: translateX(-86.9564%);
     }
 }
+
+/* .topleveltransitionswitch_EnterActive_Cpk9b *,
+.topleveltransitionswitch_ExitActive_SoGsJ * {
+    animation: none !important;
+    transition: none !important;
+    animation-play-state: paused !important;
+    will-change: auto !important;
+} */
