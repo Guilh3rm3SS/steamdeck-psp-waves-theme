@@ -1,6 +1,6 @@
 {
   "name": "Animated PSP Waves Background",
-  "version": "v1.3",
+  "version": "v1.5",
   "author": "GuiSS",
   "description": "PSP-inspired theme for Steam Deck using CSS + SVG.",
   "manifest_version": 8,
@@ -20,11 +20,17 @@
         "Heavenly Violet",
         "Heavenly Blue",
         "Original Blue",
-        "Fire Red"
+        "Fire Red",
+        "Black",
+        "Black Gradient",
+        "Pinkish White"
       ],
       "values": {
         "Heavenly Violet": {
           "color/heavenly_violet.css": []
+        },
+        "Black": {
+          "color/black.css": []
         },
         "Original Blue": {
           "color/original_blue.css": []
@@ -34,6 +40,12 @@
         },
         "Heavenly Blue": {
           "color/heavenly_blue.css": []
+        },
+        "Black Gradient": {
+          "color/black_gradient.css": []
+        },
+        "Pinkish White": {
+          "color/pinkish_white.css": []
         }
       }
     },

@@ -11,7 +11,10 @@ This project is not affiliated with or endorsed by Sony.
 <div align="center">
   <img src="preview_images/original_blue.jpg" width="45%" alt="Original Blue">
   <img src="preview_images/fire_red.jpg" width="45%" alt="Fire Red">
-  <img src="preview_images/heavenly_violet.jpg" width="45%" alt="Heavenly Violet">
+  <img src="preview_images/violet.jpg" width="45%" alt="Violet">
+  <img src="preview_images/gradient_black.jpg" width="45%" alt="Gradient Black">
+  <img src="preview_images/white_pink.jpg" width="45%" alt="White Pink">
+  <img src="preview_images/heaven_blue.jpg" width="45%" alt="Heaven Blue">
 </div>
 
 ## Technologies Used
