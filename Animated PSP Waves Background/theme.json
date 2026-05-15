@@ -1,6 +1,6 @@
 {
   "name": "Animated PSP Waves Background",
-  "version": "v1.6",
+  "version": "v1.7",
   "author": "GuiSS",
   "description": "PSP-inspired theme for Steam Deck using CSS + SVG.",
   "manifest_version": 8,
@@ -15,41 +15,200 @@
   "patches": {
     "Theme Color": {
       "type": "dropdown",
-      "default": "Heavenly Blue",
+      "default": "Blue 1",
+
       "options": [
-        "Heavenly Violet",
-        "Heavenly Blue",
-        "Original Blue",
-        "Fire Red",
         "Black",
-        "Black Gradient",
-        "Pinkish White",
-        "Purple"
+        "Black 2",
+        "Blue 1",
+        "Blue 2",
+        "Brown",
+        "Cyan",
+        "Dark Purple 1",
+        "Dark Purple 2",
+        "Golden",
+        "Gray",
+        "Green 1",
+        "Green 2",
+        "Green 3",
+        "Green 4",
+        "Green 5",
+        "Pink 1",
+        "Pink 2",
+        "Pink 3",
+        "Pink 4",
+        "Pink 5",
+        "Pink 6",
+        "Pink 7",
+        "Pink 8",
+        "Purple 1",
+        "Purple 2",
+        "Purple 3",
+        "Purple 4",
+        "Red",
+        "Violet 1",
+        "Violet 2",
+        "White 1",
+        "White 2",
+        "Yellow 1",
+        "Yellow 2",
+        "Yellow 3"
       ],
+
       "values": {
-        "Heavenly Violet": {
-          "color/heavenly_violet.css": []
-        },
         "Black": {
           "color/black.css": []
         },
-        "Original Blue": {
-          "color/original_blue.css": []
+
+        "Black 2": {
+          "color/black-2.css": []
         },
-        "Fire Red": {
-          "color/fire_red.css": []
+
+        "Blue 1": {
+          "color/blue-1.css": []
         },
-        "Heavenly Blue": {
-          "color/heavenly_blue.css": []
+
+        "Blue 2": {
+          "color/blue-2.css": []
         },
-        "Black Gradient": {
-          "color/black_gradient.css": []
+
+        "Brown": {
+          "color/brown.css": []
         },
-        "Purple": {
-          "color/purple.css": []
+
+        "Cyan": {
+          "color/cyan.css": []
         },
-        "Pinkish White": {
-          "color/pinkish_white.css": []
+
+        "Dark Purple 1": {
+          "color/dark-purple-1.css": []
+        },
+
+        "Dark Purple 2": {
+          "color/dark-purple-2.css": []
+        },
+
+        "Golden": {
+          "color/golden.css": []
+        },
+
+        "Gray": {
+          "color/gray.css": []
+        },
+
+        "Green 1": {
+          "color/green-1.css": []
+        },
+
+        "Green 2": {
+          "color/green-2.css": []
+        },
+
+        "Green 3": {
+          "color/green-3.css": []
+        },
+
+        "Green 4": {
+          "color/green-4.css": []
+        },
+
+        "Green 5": {
+          "color/green-5.css": []
+        },
+
+        "Pink 1": {
+          "color/pink-1.css": []
+        },
+
+        "Pink 2": {
+          "color/pink-2.css": []
+        },
+
+        "Pink 3": {
+          "color/pink-3.css": []
+        },
+
+        "Pink 4": {
+          "color/pink-4.css": []
+        },
+
+        "Pink 5": {
+          "color/pink-5.css": []
+        },
+
+        "Pink 6": {
+          "color/pink-6.css": []
+        },
+
+        "Pink 7": {
+          "color/pink-7.css": []
+        },
+
+        "Pink 8": {
+          "color/pink-8.css": []
+        },
+
+        "Purple 1": {
+          "color/purple-1.css": []
+        },
+
+        "Purple 2": {
+          "color/purple-2.css": []
+        },
+
+        "Purple 3": {
+          "color/purple-3.css": []
+        },
+
+        "Purple 4": {
+          "color/purple-4.css": []
+        },
+
+        "Red": {
+          "color/red.css": []
+        },
+
+        "Violet 1": {
+          "color/violet-1.css": []
+        },
+
+        "Violet 2": {
+          "color/violet-2.css": []
+        },
+
+        "White 1": {
+          "color/white-1.css": []
+        },
+
+        "White 2": {
+          "color/white-2.css": []
+        },
+
+        "Yellow 1": {
+          "color/yellow-1.css": []
+        },
+
+        "Yellow 2": {
+          "color/yellow-2.css": []
+        },
+
+        "Yellow 3": {
+          "color/yellow-3.css": []
+        }
+      }
+    },
+    "Fullscreen Mode (Changes the Background Bottom Fade Effect)": {
+      "type": "dropdown",
+      "default": "Off",
+      "min": 1,
+      "max": 2,
+      "step": 1,
+      "values": {
+        "On": {
+            "fade/no-fade.css": []
+          },
+        "Off": {
+          "fade/custom-fade.css": []
         }
       }
     },

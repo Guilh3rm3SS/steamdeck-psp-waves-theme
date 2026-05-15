@@ -10,6 +10,8 @@
     --wave-height: 150%;
     --wave-width: 50000px;
     --wave-speed: 240s;
+
+    --bottom-fade: radial-gradient(ellipse 150% 100% at 50% 0%, black 96%, transparent 100%)
 }
 
 .gamepadhomerecentgames_RecentGamesBackgroundContainer_QNkOt {
@@ -92,4 +94,12 @@
     to {
         transform: translateX(-86.9564%);
     }
+}
+
+
+
+.RecentGamesBackgroundContainer, .RecentGamesBackgroundImages
+{
+    -webkit-mask-image: var(--bottom-fade);
+
 }

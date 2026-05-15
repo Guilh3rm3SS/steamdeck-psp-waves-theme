@@ -24,13 +24,12 @@ This project is not affiliated with or endorsed by Sony.
 
 ## Future Plans
 
-*   **More Color Palettes** 
+*   ~~**More Color Palettes** ~~
 *   **Classic PSP Theme** 
 *   ~~**More natural wave movements**~~
 *   ~~**Decrease Steam Deck performance impact**~~
 
 ## Recommended CSS Themes to Use With
-*   **No Hero Gradient** 
 *   **Mini Carousel** 
 *   **Fullscreen Home or Switch Like Home**
 
