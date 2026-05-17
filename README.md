@@ -30,8 +30,7 @@ This project is not affiliated with or endorsed by Sony.
 *   ~~**Decrease Steam Deck performance impact**~~
 
 ## Recommended CSS Themes to Use With
-*   **Mini Carousel** 
-*   **Fullscreen Home or Switch Like Home**
+*   **Art Hero**
 
 ## Installation
 
