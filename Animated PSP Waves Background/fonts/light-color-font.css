@@ -11,7 +11,7 @@
 }
 
 ._3eEbSktrstBdLk0dVpnKVI._3Gp1bACHx__POxmy6Gd3kG {
-    background-color: color-mix(in srgb, var(--font-color-2), transparent 15%)
+    background: color-mix(in srgb, var(--font-color-2), transparent 15%)
 }
 
 /* news */
@@ -72,5 +72,5 @@
 }
 
 ._3IBLc81yyL08OJ7rfKtF00._31ZleDJpmmVr6YwR5VLHiu ._2JobstxtZVYF3078DblN2M::before, ._2JobstxtZVYF3078DblN2M._1jNhbFODJy7sNdcnEeZkz4::before{
-    background-color: color-mix(in srgb, gray, transparent 50%)
+    background: color-mix(in srgb, gray, transparent 50%)
 }

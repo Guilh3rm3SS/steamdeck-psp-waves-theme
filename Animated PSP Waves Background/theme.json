@@ -77,7 +77,8 @@
         },
 
         "Cyan": {
-          "color/cyan.css": []
+          "color/cyan.css": [],
+          "fonts/light-color-font.css": []
         },
 
         "Dark Purple 1": {
@@ -101,23 +102,28 @@
         },
 
         "Green 2": {
-          "color/green-2.css": []
+          "color/green-2.css": [],
+          "fonts/light-color-font.css": []
         },
 
         "Green 3": {
-          "color/green-3.css": []
+          "color/green-3.css": [],
+          "fonts/light-color-font.css": []
         },
 
         "Green 4": {
-          "color/green-4.css": []
+          "color/green-4.css": [],
+          "fonts/light-color-font.css": []
         },
 
         "Green 5": {
-          "color/green-5.css": []
+          "color/green-5.css": [],
+          "fonts/light-color-font.css": []
         },
 
         "Pink 1": {
-          "color/pink-1.css": []
+          "color/pink-1.css": [],
+          "fonts/light-color-font.css": []
         },
 
         "Pink 2": {
@@ -141,15 +147,18 @@
         },
 
         "Pink 7": {
-          "color/pink-7.css": []
+          "color/pink-7.css": [],
+          "fonts/light-color-font.css": []
         },
 
         "Pink 8": {
-          "color/pink-8.css": []
+          "color/pink-8.css": [],
+          "fonts/light-color-font.css": []
         },
 
         "Purple 1": {
-          "color/purple-1.css": []
+          "color/purple-1.css": [],
+          "fonts/light-color-font.css": []
         },
 
         "Purple 2": {
