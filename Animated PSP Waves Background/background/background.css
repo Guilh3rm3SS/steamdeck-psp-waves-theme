@@ -5,7 +5,7 @@
 ._2r485O6B51u64d19eTbK1a, /*Media*/
 ._1l0LmmqDUXH19SjfELddn7 /*Downloads*/
 {
-    background: var(--background-color);
+    background: var(--psp-background-color);
     background-size: cover;
     z-index: 1;
 }

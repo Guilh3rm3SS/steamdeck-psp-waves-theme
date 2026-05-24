@@ -1,7 +1,7 @@
 :root {
-    --font-color-1: #2b2b2b;
-    --font-color-2: #404040;
-    --font-color-3: #6b6b6b;
+    --psp-font-color-1: #2b2b2b;
+    --psp-font-color-2: #404040;
+    --psp-font-color-3: #6b6b6b;
 }
 
 
@@ -11,7 +11,7 @@
 }
 
 ._3eEbSktrstBdLk0dVpnKVI._3Gp1bACHx__POxmy6Gd3kG {
-    background: color-mix(in srgb, var(--font-color-2), transparent 15%)
+    background: color-mix(in srgb, var(--psp-font-color-2), transparent 15%)
 }
 
 /* news */
@@ -25,7 +25,7 @@
 ._1j_gja8bHXjiS-BeSQk8hb ._1s_9cSxUjb4609MSH0EjWH ._2gLHbXukQBdrIKhqEYVvOe,
 .S2Fu9HxHCA5MaCLGrN2ib ._19LfMT7PFWg2xHOqNjR99q,
 .KLo2nZeTMZykCUGVlKsab .EZ-F-qwveg8WDiTu38_DQ{
-    color: var(--font-color-2);
+    color: var(--psp-font-color-2);
 }
 
 ._4LAnPYKRPeF-QDReu_VGm,
@@ -33,7 +33,7 @@
 ._1OYOtnizQRw4vaYm_q8Oul,
 .BasicUI ._3gwMkKp82bb5aZj4EeQnpi ._3CRLA2FFclTRCznNBgtiIH
 {
-    color: var(--font-color-1);
+    color: var(--psp-font-color-1);
 }
 
 
@@ -48,7 +48,7 @@
 .UVeN0kaD3zv1feMj_mMw5 .QCKBqF2k_sRLcXJ5qQIEl .Gy1Y7lb4Y47vK8odzSru2,
 ._3698jU4IwAALpt9QeZPqqd,
 ._2VByWZ91DPPVmK_PDiHEmq{
-    color: var(--font-color-3);
+    color: var(--psp-font-color-3);
 }
 
 /* Online */
