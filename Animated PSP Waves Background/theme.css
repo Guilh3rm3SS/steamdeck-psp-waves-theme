@@ -11,16 +11,17 @@
     --wave-width: 50000px;
     --wave-speed: 240s;
 
-    --bottom-fade: radial-gradient(ellipse 150% 100% at 50% 0%, black 96%, transparent 100%)
+    --bottom-fade: radial-gradient(ellipse 150% 100% at 50% 0%, black 96%, transparent 100%);
 }
 
 .gamepadhomerecentgames_RecentGamesBackgroundContainer_QNkOt {
     background: var(--background-color);
 
-    position: absolute;
+    position: fixed;
     inset: 0;
     z-index: 0;
     overflow: hidden;
+    height: calc(100vh);
 }
 
 .gamepadhomerecentgames_RecentGamesBackgroundContainer_QNkOt>* {
@@ -45,6 +46,7 @@
     background-size: 100% 100%;
     background-image: var(--wave-1);
     opacity: 1;
+
 }
 
 /* --- Wave 1 --- */
@@ -98,8 +100,15 @@
 
 
 
-.RecentGamesBackgroundContainer, .RecentGamesBackgroundImages
+.RecentGamesBackgroundContainer
 {
-    -webkit-mask-image: var(--bottom-fade);
+    -webkit-mask-image: none;
 
 }
+
+/* fix */
+._3IBLc81yyL08OJ7rfKtF00._31ZleDJpmmVr6YwR5VLHiu ._2JobstxtZVYF3078DblN2M::before, ._2JobstxtZVYF3078DblN2M._1jNhbFODJy7sNdcnEeZkz4::before{
+    top: -1px;
+}
+
+

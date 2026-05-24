@@ -1,7 +1,7 @@
 :root {
     --psp-left: #62491f;
     --psp-right: #cbb68d;
-    --wave-glow: #e6cb80;
+    --wave-glow: #62491f;
     --background-color: linear-gradient(25deg, color-mix(in srgb, var(--psp-left), transparent 0%) 0%, color-mix(in srgb, var(--psp-right), transparent 0%) 100%);
 
 

@@ -1,6 +1,6 @@
 {
   "name": "Animated PSP Waves Background",
-  "version": "v1.7",
+  "version": "v1.8",
   "author": "GuiSS",
   "description": "PSP-inspired theme for Steam Deck using CSS + SVG.",
   "manifest_version": 8,
@@ -177,38 +177,38 @@
         },
 
         "White 1": {
-          "color/white-1.css": []
+          "color/white-1.css": [],
+          "fonts/light-color-font.css": []
         },
 
         "White 2": {
-          "color/white-2.css": []
+          "color/white-2.css": [],
+          "fonts/light-color-font.css": []
         },
 
         "Yellow 1": {
-          "color/yellow-1.css": []
+          "color/yellow-1.css": [],
+          "fonts/light-color-font.css": []
         },
 
         "Yellow 2": {
-          "color/yellow-2.css": []
+          "color/yellow-2.css": [],
+          "fonts/light-color-font.css": []
         },
 
         "Yellow 3": {
-          "color/yellow-3.css": []
+          "color/yellow-3.css": [],
+          "fonts/light-color-font.css": []
         }
       }
     },
-    "Fullscreen Mode (Changes the Background Bottom Fade Effect)": {
-      "type": "dropdown",
-      "default": "Off",
-      "min": 1,
-      "max": 2,
-      "step": 1,
+    "Apply Background Colors Globally": {
+      "default": "Yes",
+      "type": "checkbox",
       "values": {
-        "On": {
-            "fade/no-fade.css": []
-          },
-        "Off": {
-          "fade/custom-fade.css": []
+        "No": {},
+        "Yes": {
+          "background/background.css": []
         }
       }
     },

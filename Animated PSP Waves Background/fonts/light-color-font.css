@@ -1,0 +1,76 @@
+:root {
+    --font-color-1: #2b2b2b;
+    --font-color-2: #404040;
+    --font-color-3: #6b6b6b;
+}
+
+
+/* font color 1*/
+._3eEbSktrstBdLk0dVpnKVI._3Gp1bACHx__POxmy6Gd3kG{
+    color: white;
+}
+
+._3eEbSktrstBdLk0dVpnKVI._3Gp1bACHx__POxmy6Gd3kG {
+    background-color: color-mix(in srgb, var(--font-color-2), transparent 15%)
+}
+
+/* news */
+._3eEbSktrstBdLk0dVpnKVI,
+._1KKWf5v5FhqL_NrtrGZPzG,
+._1f0dZzzkepidbFYKDYcvUS._39b83mYvwoVaLgo987G5mv,
+.tT1EP3i2DICnPz82JejwZ ._3RfjisyTyFEJPxEH1aCglw,
+._2RTo4iH5C026PtVTtWrBK3 ._1EIQLhLAPTMft0B_erQdI-,
+.UVeN0kaD3zv1feMj_mMw5 .QCKBqF2k_sRLcXJ5qQIEl,
+._1j_gja8bHXjiS-BeSQk8hb ._1s_9cSxUjb4609MSH0EjWH ._39Y01uSRcLiDg5DneTTR0m,
+._1j_gja8bHXjiS-BeSQk8hb ._1s_9cSxUjb4609MSH0EjWH ._2gLHbXukQBdrIKhqEYVvOe,
+.S2Fu9HxHCA5MaCLGrN2ib ._19LfMT7PFWg2xHOqNjR99q,
+.KLo2nZeTMZykCUGVlKsab .EZ-F-qwveg8WDiTu38_DQ{
+    color: var(--font-color-2);
+}
+
+._4LAnPYKRPeF-QDReu_VGm,
+._1wLpmwH1g8b3Xra-xAL-iK .TH3M8HDaCIzFH0ZswR_Lh,
+._1OYOtnizQRw4vaYm_q8Oul,
+.BasicUI ._3gwMkKp82bb5aZj4EeQnpi ._3CRLA2FFclTRCznNBgtiIH
+{
+    color: var(--font-color-1);
+}
+
+
+.MBkkhT4wei3tWetnWbiqn,
+._1jXShdEo0WfXH66OqPkIyJ ._3H9W-9RwwfJktXPkc6EWjR,
+.BasicUI ._3zVCVKrpcKJT5fd_dbyuwQ .xpRXvu3-lbtUHYWgwJCiJ,
+.BasicUI ._3fDIRGKWUAQUCORORZWL_f .NhBU2IYSxZT2-iO1G3ntz,
+.BasicUI .jdr423QSddvvrymBOD45H ._1QCdVPE6SnEroj8IEUN0zX,
+.BasicUI ._1SQ30LQnUhED7sXI79rmas ._3i0kopAostOz2IDi9HqmeN,
+.BasicUI ._2r7cQk8w-M3B3FgxFKmCHu,
+.BasicUI ._1EjjeGgUBbobayGTmtKTUv,
+.UVeN0kaD3zv1feMj_mMw5 .QCKBqF2k_sRLcXJ5qQIEl .Gy1Y7lb4Y47vK8odzSru2,
+._3698jU4IwAALpt9QeZPqqd,
+._2VByWZ91DPPVmK_PDiHEmq{
+    color: var(--font-color-3);
+}
+
+/* Online */
+.awayOrSnooze.online .nOdcT-MoOaXGePXLyPe0H.GamepadMode, .GamepadMode .awayOrSnooze.online .nOdcT-MoOaXGePXLyPe0H{
+    color: #357eb3;
+}
+
+/* Playing */
+.ingame .nOdcT-MoOaXGePXLyPe0H.GamepadMode, .GamepadMode .ingame .nOdcT-MoOaXGePXLyPe0H{
+    color: #61805a;
+}
+
+/* Offline */
+.offline .nOdcT-MoOaXGePXLyPe0H.GamepadMode, .GamepadMode .offline .nOdcT-MoOaXGePXLyPe0H{
+    color: #5c5e60;
+}
+
+
+._4LAnPYKRPeF-QDReu_VGm, ._1wLpmwH1g8b3Xra-xAL-iK .TH3M8HDaCIzFH0ZswR_Lh, ._1OYOtnizQRw4vaYm_q8Oul, .BasicUI ._3gwMkKp82bb5aZj4EeQnpi ._3CRLA2FFclTRCznNBgtiIH{
+    text-shadow: none;
+}
+
+._3IBLc81yyL08OJ7rfKtF00._31ZleDJpmmVr6YwR5VLHiu ._2JobstxtZVYF3078DblN2M::before, ._2JobstxtZVYF3078DblN2M._1jNhbFODJy7sNdcnEeZkz4::before{
+    background-color: color-mix(in srgb, gray, transparent 50%)
+}
