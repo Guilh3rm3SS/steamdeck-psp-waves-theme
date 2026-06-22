@@ -1,0 +1,10 @@
+:root {
+
+    --psp-background-color: linear-gradient(var(--psp-gradient-angle), color-mix(in srgb, var(--psp-light-color), transparent 0%) 0%, color-mix(in srgb, var(--psp-dark-color), transparent 0%) var(--psp-gradient-balance));
+
+    --psp-wave: var(--psp-wave-custom);
+    --psp-color-mode: var(--psp-custom-blend-mode);
+
+}
+
+

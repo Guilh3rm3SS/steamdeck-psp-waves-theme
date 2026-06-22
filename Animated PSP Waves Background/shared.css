@@ -1,0 +1,117 @@
+
+.gamepadhomerecentgames_RecentGamesBackgroundContainer_QNkOt {
+    background: var(--psp-background-color);
+
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    height: calc(100vh);
+    isolation: isolate;
+}
+
+.gamepadhomerecentgames_RecentGamesBackgroundContainer_QNkOt>* {
+    opacity: 0.5;
+    bottom: 50vh;
+}
+
+
+/* Base Comum: Aplicando o Brilho e Altura Global */
+.gamepadhomerecentgames_RecentGamesBackgroundContainer_QNkOt::before,
+.gamepadhomerecentgames_RecentGamesBackgroundContainer_QNkOt::after {
+    content: "";
+    position: absolute;
+    bottom: -60%;
+    left: 0;
+
+    height: var(--psp-wave-height);
+
+    /* --- Máscara usando o seu SVG com Blur --- */
+    -webkit-mask-image: var(--psp-wave);
+    mask-image: var(--psp-wave);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+
+    /* --- O Gradiente que vai dar cor ao SVG texturizado --- */
+    background-image: linear-gradient(  var(--psp-wave-color),   var(--psp-wave-color)) ;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    mix-blend-mode: var(--psp-color-mode);
+    will-change: auto;
+    transform: translate3d(0, 0, 0);
+    pointer-events: none;
+    opacity: 1;
+    transform-origin: bottom;
+}
+
+/* --- Wave 1 --- */
+.gamepadhomerecentgames_RecentGamesBackgroundContainer_QNkOt::before {
+    width: var(--psp-wave-width);
+    animation:
+    move-wave-2 var(--psp-wave-speed) linear reverse infinite,
+    distorcao-passada calc(var(--psp-wave-speed) * 5.618) ease-in-out infinite,
+    height-variation calc(var(--psp-wave-speed) * 4) ease-in-out infinite;
+    animation-delay: calc(var(--psp-wave-speed) * -0.02);
+}
+
+/* --- Wave 2 --- */
+.gamepadhomerecentgames_RecentGamesBackgroundContainer_QNkOt::after {
+    width: calc(var(--psp-wave-width) * 0.95);
+    animation:
+    move-wave-2 var(--psp-wave-speed) linear reverse infinite,
+    height-variation calc(var(--psp-wave-speed) * 4) ease-in-out infinite;
+    animation-delay: calc(var(--psp-wave-speed) * -0.02);
+}
+
+@keyframes move-wave-2 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes distorcao-passada {
+    0%, 100% {
+        scale: 1.02 1;
+    }
+    25% {
+        scale: 1.1 1.01;
+    }
+    50% {
+        scale: 1.04 0.98;
+    }
+    75% {
+        scale: 1.08 1.02;
+    }
+}
+
+@keyframes height-variation {
+    0% {
+        translate: 0 0%;
+    }
+    25% {
+        translate: 0 -10%;
+    }
+    50% {
+        translate: 0 -5%;
+    }
+    75% {
+        translate: 0 4%;
+    }
+}
+
+.RecentGamesBackgroundContainer {
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
+/* fix */
+._3IBLc81yyL08OJ7rfKtF00._31ZleDJpmmVr6YwR5VLHiu ._2JobstxtZVYF3078DblN2M::before,
+._2JobstxtZVYF3078DblN2M._1jNhbFODJy7sNdcnEeZkz4::before {
+    top: -1px;
+}

@@ -1,6 +1,7 @@
 {
   "name": "Animated PSP Waves Background",
-  "version": "v1.9",
+  "id": "guiss-psp-waves-theme",
+  "version": "v1.10",
   "author": "GuiSS",
   "description": "PSP-inspired theme for Steam Deck using CSS + SVG.",
   "manifest_version": 8,
@@ -10,13 +11,14 @@
     ]
   },
   "inject": {
-    "theme.css": []
+    "shared.css": []
   },
   "patches": {
     "Theme Color": {
       "type": "dropdown",
       "default": "Blue 1",
       "options": [
+        "Custom",
         "Black",
         "Black 2",
         "Blue 1",
@@ -54,111 +56,122 @@
         "Yellow 3"
       ],
       "values": {
-        "Black": {
-          "color/black.css": []
+        "Custom": {"color/custom/custom.css": []},
+        "Black": { "color/black.css": [] },
+        "Black 2": { "color/black-2.css": [] },
+        "Blue 1": { "color/blue-1.css": [] },
+        "Blue 2": { "color/blue-2.css": [] },
+        "Brown": { "color/brown.css": [] },
+        "Cyan": { "color/cyan.css": [] },
+        "Dark Purple 1": { "color/dark-purple-1.css": [] },
+        "Dark Purple 2": { "color/dark-purple-2.css": [] },
+        "Golden": { "color/golden.css": [] },
+        "Gray": { "color/gray.css": [] },
+        "Green 1": { "color/green-1.css": [] },
+        "Green 2": { "color/green-2.css": [] },
+        "Green 3": { "color/green-3.css": [] },
+        "Green 4": { "color/green-4.css": [] },
+        "Green 5": { "color/green-5.css": [] },
+        "Pink 1": { "color/pink-1.css": [] },
+        "Pink 2": { "color/pink-2.css": [] },
+        "Pink 3": { "color/pink-3.css": [] },
+        "Pink 4": { "color/pink-4.css": [] },
+        "Pink 5": { "color/pink-5.css": [] },
+        "Pink 6": { "color/pink-6.css": [] },
+        "Pink 7": { "color/pink-7.css": [] },
+        "Pink 8": { "color/pink-8.css": [] },
+        "Purple 1": { "color/purple-1.css": [] },
+        "Purple 2": { "color/purple-2.css": [] },
+        "Purple 3": { "color/purple-3.css": [] },
+        "Purple 4": { "color/purple-4.css": [] },
+        "Red": { "color/red.css": [] },
+        "Violet 1": { "color/violet-1.css": [] },
+        "Violet 2": { "color/violet-2.css": [] },
+        "White 1": { "color/white-1.css": [] },
+        "White 2": { "color/white-2.css": [] },
+        "Yellow 1": { "color/yellow-1.css": [] },
+        "Yellow 2": { "color/yellow-2.css": [] },
+        "Yellow 3": { "color/yellow-3.css": [] }
+      },
+      "components": [
+        {
+          "name": "Background Color 1",
+          "type": "color-picker",
+          "on": "Custom",
+          "default": "#d4a0f8",
+          "css_variable": "--psp-dark-color",
+          "tabs": []
         },
-        "Black 2": {
-          "color/black-2.css": []
+        {
+          "name": "Background Color 2",
+          "type": "color-picker",
+          "on": "Custom",
+          "default": "#5194f4",
+          "css_variable": "--psp-light-color",
+          "tabs": []
         },
-        "Blue 1": {
-          "color/blue-1.css": []
-        },
-        "Blue 2": {
-          "color/blue-2.css": []
-        },
-        "Brown": {
-          "color/brown.css": []
-        },
-        "Cyan": {
-          "color/cyan.css": []
-        },
-        "Dark Purple 1": {
-          "color/dark-purple-1.css": []
-        },
-        "Dark Purple 2": {
-          "color/dark-purple-2.css": []
-        },
-        "Golden": {
-          "color/golden.css": []
-        },
-        "Gray": {
-          "color/gray.css": []
-        },
-        "Green 1": {
-          "color/green-1.css": []
-        },
-        "Green 2": {
-          "color/green-2.css": []
-        },
-        "Green 3": {
-          "color/green-3.css": []
-        },
-        "Green 4": {
-          "color/green-4.css": []
-        },
-        "Green 5": {
-          "color/green-5.css": []
-        },
-        "Pink 1": {
-          "color/pink-1.css": []
-        },
-        "Pink 2": {
-          "color/pink-2.css": []
-        },
-        "Pink 3": {
-          "color/pink-3.css": []
-        },
-        "Pink 4": {
-          "color/pink-4.css": []
-        },
-        "Pink 5": {
-          "color/pink-5.css": []
-        },
-        "Pink 6": {
-          "color/pink-6.css": []
-        },
-        "Pink 7": {
-          "color/pink-7.css": []
-        },
-        "Pink 8": {
-          "color/pink-8.css": []
-        },
-        "Purple 1": {
-          "color/purple-1.css": []
-        },
-        "Purple 2": {
-          "color/purple-2.css": []
-        },
-        "Purple 3": {
-          "color/purple-3.css": []
-        },
-        "Purple 4": {
-          "color/purple-4.css": []
-        },
-        "Red": {
-          "color/red.css": []
-        },
-        "Violet 1": {
-          "color/violet-1.css": []
-        },
-        "Violet 2": {
-          "color/violet-2.css": []
-        },
-        "White 1": {
-          "color/white-1.css": []
-        },
-        "White 2": {
-          "color/white-2.css": []
-        },
-        "Yellow 1": {
-          "color/yellow-1.css": []
-        },
-        "Yellow 2": {
-          "color/yellow-2.css": []
-        },
-        "Yellow 3": {
-          "color/yellow-3.css": []
+        {
+          "name": "Wave color",
+          "type": "color-picker",
+          "on": "Custom",
+          "default": "#2EA7CC",
+          "css_variable": "--psp-wave-color",
+          "tabs": []
         }
+      ]
+    },
+    "Wave Type (Custom Mode Only)": {
+      "type": "slider",
+      "default": "Type 1",
+      "values": {
+        "Type 1": { "color/custom/wave-type-1.css": [] },
+        "Type 2": { "color/custom/wave-type-2.css": [] },
+        "Type 3": { "color/custom/wave-type-3.css": [] },
+        "Type 4": { "color/custom/wave-type-4.css": [] },
+        "Type 5": { "color/custom/wave-type-5.css": [] }
+
+      }
+    },
+    "Color Blend Mode (Custom Mode Only)": {
+      "type": "slider",
+      "default": "Screen",
+      "values": {
+        "Normal": { "--psp-custom-blend-mode": ["normal"] },
+        "Screen": { "--psp-custom-blend-mode": ["screen"] }
+      }
+    },
+    "Gradient Angle (Custom Mode Only)": {
+      "type": "slider",
+      "default": "36",
+      "values": {
+        "0": { "--psp-gradient-angle": ["0deg"] },
+        "18": { "--psp-gradient-angle": ["18deg"] },
+        "36": { "--psp-gradient-angle": ["36deg"] },
+        "54": { "--psp-gradient-angle": ["54deg"] },
+        "72": { "--psp-gradient-angle": ["72deg"] },
+        "90": { "--psp-gradient-angle": ["90deg"] },
+        "108": { "--psp-gradient-angle": ["108deg"] },
+        "126": { "--psp-gradient-angle": ["126deg"] },
+        "144": { "--psp-gradient-angle": ["144deg"] },
+        "162": { "--psp-gradient-angle": ["162deg"] },
+        "180": { "--psp-gradient-angle": ["180deg"] }
+      }
+    },
+    "Gradient Balance (Custom Mode Only)": {
+      "type": "slider",
+      "default": "5",
+      "values": {
+        "0": { "--psp-gradient-balance": ["0%"] },
+        "1": { "--psp-gradient-balance": ["20%"] },
+        "2": { "--psp-gradient-balance": ["40%"] },
+        "3": { "--psp-gradient-balance": ["60%"] },
+        "4": { "--psp-gradient-balance": ["80%"] },
+        "5": { "--psp-gradient-balance": ["100%"] },
+        "6": { "--psp-gradient-balance": ["120%"] },
+        "7": { "--psp-gradient-balance": ["140%"] },
+        "8": { "--psp-gradient-balance": ["160%"] },
+        "9": { "--psp-gradient-balance": ["180%"] },
+        "10": { "--psp-gradient-balance": ["200%"] }
       }
     },
     "Apply Background Colors Globally": {
@@ -171,7 +184,7 @@
         }
       }
     },
-     "Darker Home Font": {
+    "Darker Home Font": {
       "default": "No",
       "type": "checkbox",
       "values": {
@@ -181,7 +194,7 @@
         }
       }
     },
-     "Hide Hero": {
+    "Hide Hero": {
       "default": "Yes",
       "type": "checkbox",
       "values": {
@@ -198,39 +211,17 @@
       "max": 11,
       "step": 1,
       "values": {
-        "1": {
-          "height/1.css": []
-        },
-        "2": {
-          "height/2.css": []
-        },
-        "3": {
-          "height/3.css": []
-        },
-        "4": {
-          "height/4.css": []
-        },
-        "5": {
-          "height/5.css": []
-        },
-        "6": {
-          "height/6.css": []
-        },
-        "7": {
-          "height/7.css": []
-        },
-        "8": {
-          "height/8.css": []
-        },
-        "9": {
-          "height/9.css": []
-        },
-        "10": {
-          "height/10.css": []
-        },
-        "11": {
-          "height/11.css": []
-        }
+        "1": { "height/1.css": [] },
+        "2": { "height/2.css": [] },
+        "3": { "height/3.css": [] },
+        "4": { "height/4.css": [] },
+        "5": { "height/5.css": [] },
+        "6": { "height/6.css": [] },
+        "7": { "height/7.css": [] },
+        "8": { "height/8.css": [] },
+        "9": { "height/9.css": [] },
+        "10": { "height/10.css": [] },
+        "11": { "height/11.css": [] }
       }
     },
     "Wave Width": {
@@ -240,39 +231,17 @@
       "max": 11,
       "step": 1,
       "values": {
-        "1": {
-          "width/1.css": []
-        },
-        "2": {
-          "width/2.css": []
-        },
-        "3": {
-          "width/3.css": []
-        },
-        "4": {
-          "width/4.css": []
-        },
-        "5": {
-          "width/5.css": []
-        },
-        "6": {
-          "width/6.css": []
-        },
-        "7": {
-          "width/7.css": []
-        },
-        "8": {
-          "width/8.css": []
-        },
-        "9": {
-          "width/9.css": []
-        },
-        "10": {
-          "width/10.css": []
-        },
-        "11": {
-          "width/11.css": []
-        }
+        "1": { "width/1.css": [] },
+        "2": { "width/2.css": [] },
+        "3": { "width/3.css": [] },
+        "4": { "width/4.css": [] },
+        "5": { "width/5.css": [] },
+        "6": { "width/6.css": [] },
+        "7": { "width/7.css": [] },
+        "8": { "width/8.css": [] },
+        "9": { "width/9.css": [] },
+        "10": { "width/10.css": [] },
+        "11": { "width/11.css": [] }
       }
     },
     "Animation Speed": {
@@ -282,41 +251,18 @@
       "max": 11,
       "step": 1,
       "values": {
-        "1": {
-          "speed/1.css": []
-        },
-        "2": {
-          "speed/2.css": []
-        },
-        "3": {
-          "speed/3.css": []
-        },
-        "4": {
-          "speed/4.css": []
-        },
-        "5": {
-          "speed/5.css": []
-        },
-        "6": {
-          "speed/6.css": []
-        },
-        "7": {
-          "speed/7.css": []
-        },
-        "8": {
-          "speed/8.css": []
-        },
-        "9": {
-          "speed/9.css": []
-        },
-        "10": {
-          "speed/10.css": []
-        },
-        "11": {
-          "speed/11.css": []
-        }
+        "1": { "speed/1.css": [] },
+        "2": { "speed/2.css": [] },
+        "3": { "speed/3.css": [] },
+        "4": { "speed/4.css": [] },
+        "5": { "speed/5.css": [] },
+        "6": { "speed/6.css": [] },
+        "7": { "speed/7.css": [] },
+        "8": { "speed/8.css": [] },
+        "9": { "speed/9.css": [] },
+        "10": { "speed/10.css": [] },
+        "11": { "speed/11.css": [] }
       }
     }
-  },
-  "id": "guiss-psp-waves-theme"
+  }
 }

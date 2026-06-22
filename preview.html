@@ -1,82 +1,742 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glowing Ribbons XMB V2.0 Preview</title>
-    <link rel="stylesheet" href="Animated PSP Waves Background/theme.css">
+    <title>Animated PSP Waves Background - Interactive Preview</title>
+    <meta name="description" content="Interactive preview and customizer for the Animated PSP Waves Background theme for Steam Deck. Customize colors, speed, height, and width in real-time.">
+    
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Loader Theme files loaded dynamically -->
+    <link rel="stylesheet" href="Animated PSP Waves Background/shared.css" id="shared-style">
+    <link rel="stylesheet" href="Animated PSP Waves Background/width/6.css" id="width-style">
+    <link rel="stylesheet" href="Animated PSP Waves Background/height/6.css" id="height-style">
+    <link rel="stylesheet" href="Animated PSP Waves Background/speed/6.css" id="speed-style">
+    <link rel="stylesheet" href="Animated PSP Waves Background/color/blue-1.css" id="color-style">
+    
+    <!-- Dynamic Custom CSS components (Wave Type, etc.) -->
+    <link rel="stylesheet" href="" id="custom-wave-type-style">
+    
+    <!-- Hero Hide stylesheet is loaded by default as recommended in theme.json -->
+    <link rel="stylesheet" href="Animated PSP Waves Background/hero/hide.css" id="hide-hero-style">
+
+    <!-- Custom dynamic values inline style -->
+    <style id="custom-vars-style"></style>
+
     <style>
-        body,
-        html {
+        :root {
+            --panel-bg: rgba(15, 23, 42, 0.82); /* Reverted back to original opacity */
+            --panel-border: rgba(255, 255, 255, 0.08);
+            --accent-color: #1a9fff;
+            --accent-hover: #35b0ff;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --control-bg: #1e293b; /* Reverted back to original controls bg */
+        }
+
+        body, html {
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             overflow: hidden;
-            background: transparent;
-            /* Removido o preto */
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: var(--text-primary);
+            user-select: none;
+            -webkit-user-select: none;
         }
 
-        /* Forçamos a visibilidade no Preview (ignora o z-index -1 do index.css) */
+        /* Real theme container injected (from shared.css) */
         .gamepadhomerecentgames_RecentGamesBackgroundContainer_QNkOt {
-            z-index: 0 !important;
-        }
-
-        .ui-mockup {
-            position: absolute;
-            top: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: rgba(255, 255, 255, 0.8);
-            text-align: center;
-            z-index: 100;
+            position: fixed !important;
+            inset: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 1 !important;
             pointer-events: none;
-            letter-spacing: 2px;
-            text-transform: uppercase;
         }
 
-        /* Mockup do Decky Menu */
-        .decky-menu {
+        /* --- STUNNING CUSTOMIZATION PANEL (SIDEBAR ON THE RIGHT) --- */
+        .customizer-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 360px;
+            background: var(--panel-bg);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border-left: 1px solid var(--panel-border);
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            
+            /* Slide transitions */
+            transform: translateX(0);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+        }
+
+        /* Collapsed state shifts panel off-screen */
+        .customizer-panel.collapsed {
+            transform: translateX(100%);
+            box-shadow: none;
+        }
+
+        /* Floating toggle button sticking out on the left side of the panel */
+        .panel-toggle-btn {
             position: absolute;
-            right: 20px;
-            top: 20px;
-            width: 300px;
-            height: 500px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            z-index: 50;
-            padding: 20px;
-            color: white;
+            top: 24px;
+            left: -48px;
+            width: 48px;
+            height: 48px;
+            background: var(--panel-bg);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid var(--panel-border);
+            border-right: none;
+            border-radius: 10px 0 0 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.25);
+            transition: all 0.2s ease;
+            outline: none;
         }
 
-        .line-item {
-            height: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            margin-bottom: 10px;
+        .panel-toggle-btn:hover {
+            color: var(--accent-color);
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        .panel-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--panel-border);
+        }
+
+        .panel-header h1 {
+            margin: 0;
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #fff;
+        }
+
+        .panel-header p {
+            margin: 4px 0 0 0;
+            font-size: 12px;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .panel-scrollable {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 20px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            box-sizing: border-box;
+        }
+
+        .panel-section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 8px 0 2px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-section-title span.status-indicator {
+            font-size: 9px;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text-secondary);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .custom-settings-section:not(.disabled) .panel-section-title span.status-indicator {
+            background: rgba(26, 159, 255, 0.15);
+            color: var(--accent-color);
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .control-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .control-label span.value-badge {
+            background: rgba(26, 159, 255, 0.1);
+            color: var(--accent-color);
+            padding: 2px 8px;
             border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* Styled Dropdown Select */
+        .styled-select {
+            background: var(--control-bg);
+            border: 1px solid var(--panel-border);
+            color: var(--text-primary);
+            border-radius: 6px;
+            padding: 9px 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .styled-select:focus:not(:disabled), .styled-select:hover:not(:disabled) {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 8px rgba(26, 159, 255, 0.3);
+        }
+
+        .styled-select:disabled {
+            cursor: not-allowed;
+            color: var(--text-secondary);
+        }
+
+        /* Styled Sliders */
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .styled-slider {
+            flex-grow: 1;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            background: var(--control-bg);
+            border-radius: 3px;
+            outline: none;
+            margin: 10px 0;
+        }
+
+        .styled-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            cursor: pointer;
+            box-shadow: 0 0 6px rgba(0,0,0,0.5);
+            transition: transform 0.15s ease;
+        }
+
+        .styled-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.25);
+            background: var(--accent-hover);
+        }
+
+        .styled-slider:disabled::-webkit-slider-thumb {
+            background: var(--text-secondary);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Custom Color Picker Row containing color circle and opacity (alpha) slider */
+        .color-picker-row {
+            background: var(--control-bg);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--panel-border);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .custom-settings-section:not(.disabled) .color-picker-row:hover {
+            border-color: var(--accent-color);
+        }
+
+        .color-row-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .color-row-header span.alpha-badge {
+            background: rgba(26, 159, 255, 0.1);
+            color: var(--accent-color);
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+        }
+
+        .color-row-inputs {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .alpha-slider {
+            flex-grow: 1;
+            margin: 0 !important;
+        }
+
+        .color-input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 32px;
+            height: 32px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            padding: 0;
+        }
+
+        .color-input::-webkit-color-swatch {
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .color-input:disabled {
+            cursor: not-allowed;
+        }
+
+        /* Custom Mode settings panel section styling */
+        .custom-settings-section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: all 0.3s ease;
+        }
+
+        /* Disabled State (greyed out when preset color is selected) */
+        .custom-settings-section.disabled {
+            opacity: 0.4;
+            pointer-events: none;
+            filter: grayscale(60%);
         }
     </style>
 </head>
 
 <body>
 
-    <div class="ui-mockup">
-        <h2 style="margin:0">Glowing Ribbons XMB</h2>
-        <p style="font-size: 12px; opacity: 0.6;">V2.0 - Shader Master Edition</p>
+    <!-- REAL HTML STRUCTURE INJECTED BY DECKY / CSS LOADER -->
+    <div class="gamepadhomerecentgames_RecentGamesBackgroundContainer_QNkOt" id="waves-container">
+        <div></div> <!-- Wave 1 & 3 (::before) -->
+        <div></div> <!-- Wave 2 & 4 (::after) -->
     </div>
 
-    <!-- Simulação do Menu do Decky -->
+    <!-- ALWAYS VISIBLE CUSTOMIZATION SIDEBAR -->
+    <aside class="customizer-panel" id="customizer-panel" aria-label="Theme Customization Panel">
+        
+        <!-- Toggle button to collapse and expand the panel -->
+        <button class="panel-toggle-btn" id="panel-toggle" onclick="togglePanel()" aria-label="Toggle Customization Panel">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" id="toggle-icon">
+                <!-- Chevron Right initially (meaning "Hide") -->
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
 
-    <!-- Estrutura Real injetada pelo Steam Deck -->
-    <div class="gamepadhomerecentgames_RecentGamesBackgroundContainer_QNkOt">
-        <div></div> <!-- Onda 3 e Onda 5 (::before) -->
-        <div></div> <!-- Onda 4 e Partículas (::after) -->
-    </div>
+        <div class="panel-header">
+            <h1>PSP Waves Theme</h1>
+            <p>Customization Panel</p>
+        </div>
 
+        <div class="panel-scrollable">
+            
+            <div class="panel-section-title">Color Settings</div>
+            
+            <!-- Theme Color Selector dropdown -->
+            <div class="control-group">
+                <label class="control-label" for="theme-color-select">Primary Color</label>
+                <select id="theme-color-select" class="styled-select" onchange="changeColor(this.value)">
+                    <option value="Custom">Custom</option>
+                    <option value="Black">Black</option>
+                    <option value="Black 2">Black 2</option>
+                    <option value="Blue 1" selected>Blue 1</option>
+                    <option value="Blue 2">Blue 2</option>
+                    <option value="Brown">Brown</option>
+                    <option value="Cyan">Cyan</option>
+                    <option value="Dark Purple 1">Dark Purple 1</option>
+                    <option value="Dark Purple 2">Dark Purple 2</option>
+                    <option value="Golden">Golden</option>
+                    <option value="Gray">Gray</option>
+                    <option value="Green 1">Green 1</option>
+                    <option value="Green 2">Green 2</option>
+                    <option value="Green 3">Green 3</option>
+                    <option value="Green 4">Green 4</option>
+                    <option value="Green 5">Green 5</option>
+                    <option value="Pink 1">Pink 1</option>
+                    <option value="Pink 2">Pink 2</option>
+                    <option value="Pink 3">Pink 3</option>
+                    <option value="Pink 4">Pink 4</option>
+                    <option value="Pink 5">Pink 5</option>
+                    <option value="Pink 6">Pink 6</option>
+                    <option value="Pink 7">Pink 7</option>
+                    <option value="Pink 8">Pink 8</option>
+                    <option value="Purple 1">Purple 1</option>
+                    <option value="Purple 2">Purple 2</option>
+                    <option value="Purple 3">Purple 3</option>
+                    <option value="Purple 4">Purple 4</option>
+                    <option value="Red">Red</option>
+                    <option value="Violet 1">Violet 1</option>
+                    <option value="Violet 2">Violet 2</option>
+                    <option value="White 1">White 1</option>
+                    <option value="White 2">White 2</option>
+                    <option value="Yellow 1">Yellow 1</option>
+                    <option value="Yellow 2">Yellow 2</option>
+                    <option value="Yellow 3">Yellow 3</option>
+                </select>
+            </div>
+
+            <!-- Custom Mode Settings (Disabled when preset is active) -->
+            <div class="custom-settings-section disabled" id="custom-color-panel">
+                
+                <div class="panel-section-title">
+                    Custom Colors
+                    <span class="status-indicator" id="status-indicator">Inactive</span>
+                </div>
+                
+                <!-- Background Color 1 Picker + Opacity (Alpha) Slider -->
+                <div class="color-picker-row">
+                    <div class="color-row-header">
+                        <span>Background 1</span>
+                        <span class="alpha-badge" id="badge-bg1-alpha">100%</span>
+                    </div>
+                    <div class="color-row-inputs">
+                        <input type="color" id="custom-bg1" class="color-input" value="#d4a0f8" disabled oninput="updateCustomVariables()">
+                        <input type="range" id="custom-bg1-alpha" class="styled-slider alpha-slider" min="0" max="1" step="0.05" value="1" disabled oninput="updateCustomVariables()">
+                    </div>
+                </div>
+
+                <!-- Background Color 2 Picker + Opacity (Alpha) Slider -->
+                <div class="color-picker-row">
+                    <div class="color-row-header">
+                        <span>Background 2</span>
+                        <span class="alpha-badge" id="badge-bg2-alpha">100%</span>
+                    </div>
+                    <div class="color-row-inputs">
+                        <input type="color" id="custom-bg2" class="color-input" value="#5194f4" disabled oninput="updateCustomVariables()">
+                        <input type="range" id="custom-bg2-alpha" class="styled-slider alpha-slider" min="0" max="1" step="0.05" value="1" disabled oninput="updateCustomVariables()">
+                    </div>
+                </div>
+
+                <!-- Wave Color Picker + Opacity (Alpha) Slider -->
+                <div class="color-picker-row">
+                    <div class="color-row-header">
+                        <span>Wave Color</span>
+                        <span class="alpha-badge" id="badge-wave-alpha">100%</span>
+                    </div>
+                    <div class="color-row-inputs">
+                        <input type="color" id="custom-wave" class="color-input" value="#2EA7CC" disabled oninput="updateCustomVariables()">
+                        <input type="range" id="custom-wave-alpha" class="styled-slider alpha-slider" min="0" max="1" step="0.05" value="1" disabled oninput="updateCustomVariables()">
+                    </div>
+                </div>
+
+                <!-- Custom Wave Type dropdown -->
+                <div class="control-group">
+                    <label class="control-label" for="custom-wave-type">Wave Type
+                        <span class="value-badge" id="badge-wave-type">Type 1</span>
+                    </label>
+                    <select id="custom-wave-type" class="styled-select" disabled onchange="changeCustomWaveType(this.value)">
+                        <option value="1" selected>Type 1</option>
+                        <option value="2">Type 2</option>
+                        <option value="3">Type 3</option>
+                        <option value="4">Type 4</option>
+                        <option value="5">Type 5</option>
+                    </select>
+                </div>
+
+                <!-- Color Blend Mode dropdown -->
+                <div class="control-group">
+                    <label class="control-label" for="custom-blend">Blend Mode
+                        <span class="value-badge" id="badge-blend">Screen</span>
+                    </label>
+                    <select id="custom-blend" class="styled-select" disabled onchange="updateCustomVariables()">
+                        <option value="Screen" selected>Screen</option>
+                        <option value="Normal">Normal</option>
+                    </select>
+                </div>
+
+                <!-- Gradient Angle slider -->
+                <div class="control-group">
+                    <label class="control-label" for="custom-angle">Gradient Angle
+                        <span class="value-badge" id="badge-angle">36°</span>
+                    </label>
+                    <div class="slider-container">
+                        <input type="range" id="custom-angle" class="styled-slider" min="0" max="180" step="18" value="36" disabled oninput="updateCustomVariables()">
+                    </div>
+                </div>
+
+                <!-- Gradient Balance slider -->
+                <div class="control-group">
+                    <label class="control-label" for="custom-balance">Gradient Balance
+                        <span class="value-badge" id="badge-balance">100%</span>
+                    </label>
+                    <div class="slider-container">
+                        <input type="range" id="custom-balance" class="styled-slider" min="0" max="10" step="1" value="5" disabled oninput="updateCustomVariables()">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="panel-section-title">Dimensions & Speed</div>
+
+            <!-- Wave Height slider -->
+            <div class="control-group">
+                <label class="control-label" for="slider-height">Wave Height
+                    <span class="value-badge" id="badge-height">6</span>
+                </label>
+                <div class="slider-container">
+                    <input type="range" id="slider-height" class="styled-slider" min="1" max="11" step="1" value="6" oninput="changeHeight(this.value)">
+                </div>
+            </div>
+
+            <!-- Wave Width slider -->
+            <div class="control-group">
+                <label class="control-label" for="slider-width">Wave Width
+                    <span class="value-badge" id="badge-width">6</span>
+                </label>
+                <div class="slider-container">
+                    <input type="range" id="slider-width" class="styled-slider" min="1" max="11" step="1" value="6" oninput="changeWidth(this.value)">
+                </div>
+            </div>
+
+            <!-- Animation Speed slider -->
+            <div class="control-group">
+                <label class="control-label" for="slider-speed">Animation Speed
+                    <span class="value-badge" id="badge-speed">6</span>
+                </label>
+                <div class="slider-container">
+                    <input type="range" id="slider-speed" class="styled-slider" min="1" max="11" step="1" value="6" oninput="changeSpeed(this.value)">
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+    <script>
+        // Preset files mapping from theme.json
+        const colorFilesMap = {
+            "Black": "color/black.css",
+            "Black 2": "color/black-2.css",
+            "Blue 1": "color/blue-1.css",
+            "Blue 2": "color/blue-2.css",
+            "Brown": "color/brown.css",
+            "Cyan": "color/cyan.css",
+            "Dark Purple 1": "color/dark-purple-1.css",
+            "Dark Purple 2": "color/dark-purple-2.css",
+            "Golden": "color/golden.css",
+            "Gray": "color/gray.css",
+            "Green 1": "color/green-1.css",
+            "Green 2": "color/green-2.css",
+            "Green 3": "color/green-3.css",
+            "Green 4": "color/green-4.css",
+            "Green 5": "color/green-5.css",
+            "Pink 1": "color/pink-1.css",
+            "Pink 2": "color/pink-2.css",
+            "Pink 3": "color/pink-3.css",
+            "Pink 4": "color/pink-4.css",
+            "Pink 5": "color/pink-5.css",
+            "Pink 6": "color/pink-6.css",
+            "Pink 7": "color/pink-7.css",
+            "Pink 8": "color/pink-8.css",
+            "Purple 1": "color/purple-1.css",
+            "Purple 2": "color/purple-2.css",
+            "Purple 3": "color/purple-3.css",
+            "Purple 4": "color/purple-4.css",
+            "Red": "color/red.css",
+            "Violet 1": "color/violet-1.css",
+            "Violet 2": "color/violet-2.css",
+            "White 1": "color/white-1.css",
+            "White 2": "color/white-2.css",
+            "Yellow 1": "color/yellow-1.css",
+            "Yellow 2": "color/yellow-2.css",
+            "Yellow 3": "color/yellow-3.css"
+        };
+
+        // Panel collapse/expand toggler
+        function togglePanel() {
+            const panel = document.getElementById('customizer-panel');
+            const icon = document.getElementById('toggle-icon');
+            const isCollapsed = panel.classList.toggle('collapsed');
+            
+            if (isCollapsed) {
+                // Show Chevron Left (meaning "Show panel")
+                icon.innerHTML = '<polyline points="15 18 9 12 15 6"></polyline>';
+            } else {
+                // Show Chevron Right (meaning "Hide panel")
+                icon.innerHTML = '<polyline points="9 18 15 12 9 6"></polyline>';
+            }
+        }
+
+        // Combines a 6-character Hex color string (e.g. "#ff0000") and a float alpha (0-1) to an 8-character hex string
+        function getRGBAHex(hex, alpha) {
+            const a = parseFloat(alpha);
+            const alphaHex = Math.round(a * 255).toString(16).padStart(2, '0');
+            return hex + alphaHex;
+        }
+
+        // Theme Color Switcher Logic
+        function changeColor(selectedColor) {
+            const colorStyleLink = document.getElementById('color-style');
+            const customPanel = document.getElementById('custom-color-panel');
+            const customWaveStyleLink = document.getElementById('custom-wave-type-style');
+            const indicator = document.getElementById('status-indicator');
+
+            if (selectedColor === 'Custom') {
+                // Load base custom.css and enable custom settings panel
+                colorStyleLink.href = 'Animated PSP Waves Background/color/custom/custom.css';
+                customPanel.classList.remove('disabled');
+                indicator.textContent = 'Active';
+                
+                // Enable inputs
+                document.querySelectorAll('#custom-color-panel input, #custom-color-panel select').forEach(el => {
+                    el.removeAttribute('disabled');
+                });
+
+                // Set custom wave type stylesheet
+                const waveTypeVal = document.getElementById('custom-wave-type').value;
+                changeCustomWaveType(waveTypeVal);
+                updateCustomVariables();
+            } else {
+                // Load preset color CSS and disable custom settings panel
+                const cssPath = colorFilesMap[selectedColor];
+                colorStyleLink.href = 'Animated PSP Waves Background/' + cssPath;
+                customPanel.classList.add('disabled');
+                indicator.textContent = 'Inactive';
+
+                // Disable inputs
+                document.querySelectorAll('#custom-color-panel input, #custom-color-panel select').forEach(el => {
+                    el.setAttribute('disabled', 'true');
+                });
+                
+                // Clear custom variables styles & custom wave type stylesheet
+                document.getElementById('custom-vars-style').innerHTML = '';
+                customWaveStyleLink.href = 'about:blank';
+            }
+        }
+
+        // Custom Mode Wave Type Switcher
+        function changeCustomWaveType(waveTypeNum) {
+            const customWaveStyleLink = document.getElementById('custom-wave-type-style');
+            document.getElementById('badge-wave-type').textContent = 'Type ' + waveTypeNum;
+            customWaveStyleLink.href = 'Animated PSP Waves Background/color/custom/wave-type-' + waveTypeNum + '.css';
+        }
+
+        // Custom Mode Variable Generator (Supporting Hex + Alpha sliders)
+        function updateCustomVariables() {
+            const isCustom = document.getElementById('theme-color-select').value === 'Custom';
+            const styleElement = document.getElementById('custom-vars-style');
+
+            if (isCustom) {
+                const bg1Hex = document.getElementById('custom-bg1').value;
+                const bg1Alpha = document.getElementById('custom-bg1-alpha').value;
+                const darkColor = getRGBAHex(bg1Hex, bg1Alpha);
+
+                const bg2Hex = document.getElementById('custom-bg2').value;
+                const bg2Alpha = document.getElementById('custom-bg2-alpha').value;
+                const lightColor = getRGBAHex(bg2Hex, bg2Alpha);
+
+                const waveHex = document.getElementById('custom-wave').value;
+                const waveAlpha = document.getElementById('custom-wave-alpha').value;
+                const waveColor = getRGBAHex(waveHex, waveAlpha);
+                
+                const blendVal = document.getElementById('custom-blend').value;
+                const angleVal = document.getElementById('custom-angle').value;
+                const balanceVal = document.getElementById('custom-balance').value;
+
+                // Map sliders to CSS structures
+                const blend = blendVal.toLowerCase();
+                const angle = angleVal + 'deg';
+                const balance = (balanceVal * 20) + '%';
+
+                // Update UI badges
+                document.getElementById('badge-bg1-alpha').textContent = Math.round(bg1Alpha * 100) + '%';
+                document.getElementById('badge-bg2-alpha').textContent = Math.round(bg2Alpha * 100) + '%';
+                document.getElementById('badge-wave-alpha').textContent = Math.round(waveAlpha * 100) + '%';
+                document.getElementById('badge-blend').textContent = blendVal;
+                document.getElementById('badge-angle').textContent = angleVal + '°';
+                document.getElementById('badge-balance').textContent = balance;
+
+                // Inject CSS variable declarations dynamically
+                styleElement.innerHTML = `
+                    :root {
+                        --psp-dark-color: ${darkColor} !important;
+                        --psp-light-color: ${lightColor} !important;
+                        --psp-wave-color: ${waveColor} !important;
+                        --psp-custom-blend-mode: ${blend} !important;
+                        --psp-gradient-angle: ${angle} !important;
+                        --psp-gradient-balance: ${balance} !important;
+                    }
+                `;
+            } else {
+                styleElement.innerHTML = '';
+            }
+        }
+
+        // Dimension & Speed controls
+        function changeHeight(value) {
+            document.getElementById('badge-height').textContent = value;
+            document.getElementById('height-style').href = 'Animated PSP Waves Background/height/' + value + '.css';
+        }
+
+        function changeWidth(value) {
+            document.getElementById('badge-width').textContent = value;
+            document.getElementById('width-style').href = 'Animated PSP Waves Background/width/' + value + '.css';
+        }
+
+        function changeSpeed(value) {
+            document.getElementById('badge-speed').textContent = value;
+            document.getElementById('speed-style').href = 'Animated PSP Waves Background/speed/' + value + '.css';
+        }
+
+        // Initialize defaults matching theme.json specs
+        window.addEventListener('DOMContentLoaded', () => {
+            changeColor('Blue 1');
+        });
+    </script>
 </body>
 
 </html>

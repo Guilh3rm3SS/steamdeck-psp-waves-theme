@@ -2,6 +2,8 @@
     --psp-dark-color: #be8b10;
     --psp-light-color: #f1d83b;
     --psp-wave-color: #fffd2c;
+    --psp-color-mode: screen;
+
     --psp-background-color: linear-gradient(25deg, color-mix(in srgb, var(--psp-dark-color), transparent 0%) 0%, color-mix(in srgb, var(--psp-light-color), transparent 0%) 100%);
 
 
