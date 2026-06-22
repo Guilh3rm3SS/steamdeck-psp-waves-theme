@@ -8,7 +8,7 @@ This project is not affiliated with or endorsed by Sony.
 
 ## Live Preview
 
-Click any image to open a live preview of the theme
+Click any image to open a live preview of the theme:
 
 <div align="center">
   <a href="https://guilh3rm3ss.github.io/steamdeck-psp-waves-theme/preview.html"><img src="preview_images/blue.jpg" width="45%" alt="Blue"></a>
@@ -18,12 +18,6 @@ Click any image to open a live preview of the theme
   <a href="https://guilh3rm3ss.github.io/steamdeck-psp-waves-theme/preview.html"><img src="preview_images/brown.jpg" width="45%" alt="Brown"></a>
   <a href="https://guilh3rm3ss.github.io/steamdeck-psp-waves-theme/preview.html"><img src="preview_images/custom_psvita.jpg" width="45%" alt="Custom PSVita"></a>
 </div>
-
-## 🎮 Interactive Live Preview
-
-Before installing, you can customize and test all color combinations, wave widths, heights, and speeds in real-time directly in your browser:
-
-[👉 Click here to open the Interactive Customizer Preview](https://guilh3rm3ss.github.io/steamdeck-psp-waves-theme/preview.html)
 
 ## Technologies Used
 
